@@ -28,4 +28,5 @@ Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 La página se recargará si realiza modificaciones. \
 También verá cualquier error de pelusa en la consola.
 
+<img src="./imagen1.JPG"></img>
 
