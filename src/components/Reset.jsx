@@ -24,8 +24,11 @@ const Reset = (props) => {
     const recuperar = React.useCallback(async () => {
         try {
             await auth.sendPasswordResetEmail(email)
+            console.log(email)
             console.log('correo enviado')
             props.history.push('login')
+            
+            
         } catch (error) {
             console.log(error)
             setError(error.message)
@@ -56,13 +59,17 @@ const Reset = (props) => {
                             onChange={ e => setEmail(e.target.value) }
                             value={email}
                         />
+                        
                         <button 
                             className="btn btn-lg btn-dark btn-block form-control"
                             type="submit"
+                            data-dismiss="alert" aria-label="Close"
                         >
                             Reiniciar contraseña
                         </button>
+                        
                     </form>
+                    
                 </div>
             </div>
         </div>

@@ -1,10 +1,14 @@
 import React from 'react'
 import {auth, db} from '../firebase'
 import {withRouter} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { ingresoUsuarioAccion } from '../redux/usuario';
+
+
 
 
 const Login = (props) => {
-
+    
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
@@ -36,7 +40,7 @@ const Login = (props) => {
         }else{
             login()
         }
-
+        
     }
 
     const login = React.useCallback(async () => {
@@ -130,12 +134,7 @@ const Login = (props) => {
                         >
                             {esRegistro ? 'Registrar' : 'Acceder'}
                         </button>
-                        <button id="Google"
-                            className="btn btn-lg btn-dark btn-block form-control mb-2"
-                            type="submit"
-                        >
-                            {esRegistro ? 'Registrate con google' : 'Acceder con goolge'}
-                        </button>
+                        
                         <button 
                             className="btn btn-sm btn-info btn-block form-control mb-2"
                             type="button"
@@ -143,6 +142,9 @@ const Login = (props) => {
                         >
                             {esRegistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
                         </button>
+                        <div className="mt-5 text-center">
+                                
+                            </div>
                         {
                             !esRegistro ? (
                                 <button 
@@ -154,6 +156,15 @@ const Login = (props) => {
                                 </button>
                             ) : null
                         }
+                        {/* <h3>Ingreso con Google</h3>
+                                <hr/>
+                                <button 
+                                    className="btn btn-dark"
+                                    onClick={() => dispatch(ingresoUsuarioAccion())}
+                                    disabled={loading}
+                                >
+                                    Acceder
+                                </button> */}
                     </form>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import {auth } from './firebase'
 import  Reset  from './components/Reset';
 
 
+
 const App = () => {
 
     const [firebaseUser, setFirebaseUser] = React.useState(false)
@@ -22,12 +23,13 @@ const App = () => {
             }
         })
     }, [])
-
+    
     return firebaseUser !== false ? (
         <Router>
             <div className="container">
                 <Navbar firebaseUser={firebaseUser}/>
                 <Switch>
+                
                     <Route path="/login">
                         <Login />
                     </Route>
